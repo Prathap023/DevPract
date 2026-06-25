@@ -18,7 +18,7 @@ pipeline {
         }
         stage('DOcker Build') {
             steps {
-                sh 'docker build -t SpringApp:v1 .'
+                sh 'docker build -t springapp:v1 .'
             }
         }
         stage('Deploy') {

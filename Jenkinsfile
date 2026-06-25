@@ -1,28 +1,28 @@
-pipeline{
+pipeline {
     agent any
-    stages{
-        stage('clone'){
-            steps{
+    stages {
+        stage('clone') {
+            steps {
                 git 'https://github.com/Prathap023/DevPract.git'
             }
         }
-        stage('build'){
-            steps{
+        stage('build') {
+            steps {
                 sh 'mvn clean package'
             }
         }
-        stage('test'){
-            steps{
+        stage('test') {
+            steps {
                 sh 'mvn test'
             }
         }
-        stage('DOcker Build'){
-            steps{
-                sh 'docker build -t SpringApp:v1'
+        stage('DOcker Build') {
+            steps {
+                sh 'docker build -t SpringApp:v1 .'
             }
         }
-        stage('Deploy'){
-            steps{
+        stage('Deploy') {
+            steps {
                 sh 'docker-compose up -d'
             }
         }

@@ -1,0 +1,6 @@
+version: '3'
+services: 
+  springboot:
+    image: springapp:v1
+    ports:
+      - "8080:8080"
